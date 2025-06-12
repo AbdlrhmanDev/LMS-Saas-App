@@ -81,3 +81,5 @@ interface CompanionComponentProps {
   voice: string;
   style: string;
 }
+
+export { Companion, CreateCompanion, GetAllCompanions, BuildClient, CreateUser, SearchParams, Avatar, SavedMessage, CompanionComponentProps };
