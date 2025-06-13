@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import NavItems from './NavItems'
-import { Button } from './button'
+import { SignedOut, SignedIn, SignInButton, UserButton } from '@clerk/nextjs'
 
 const Navbar = () => {
   return (
@@ -21,15 +21,14 @@ const Navbar = () => {
         
         <div className="flex items-center gap-6 md:gap-8">
           <NavItems />
-          <Button 
-            variant="outline" 
-            className="hidden md:flex border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
-            asChild
-          >
-            <Link href="/sign-in">
-              Sign in
-            </Link>
-          </Button>
+          <SignedOut>
+                    <SignInButton>
+                        <button className="btn-signin">Sign In</button>
+                    </SignInButton>
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
         </div>
       </div>
     </nav>
